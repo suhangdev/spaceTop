@@ -15,6 +15,8 @@ export default (appInfo: EggAppInfo) => {
     sourceUrl: `https://github.com/eggjs/examples/tree/master/${appInfo.name}`,
   };
 
+  config.mysql = require('/var/www/suhang/mysqlconfig.json')
+
   // the return config will combines to EggAppConfig
   return {
     ...config,

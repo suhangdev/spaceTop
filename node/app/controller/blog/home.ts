@@ -7,6 +7,8 @@ export default class HomeController extends Controller {
   }
   public async getList() {
     const { ctx } = this
-    ctx.body = '<h1>home list</h1>'
+    const result = await this.app.mysql.select('articleList')
+    console.log(result)
+    ctx.body = result
   }
 }
