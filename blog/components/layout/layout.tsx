@@ -7,7 +7,7 @@ const Layout = (props: any) => {
     return (
         <div>
             <Header></Header>
-            <div className="container">
+            <div className="layout">
                 {props.children}
             </div>
         </div>
