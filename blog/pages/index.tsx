@@ -14,7 +14,7 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
             </Link> */}
             <Row gutter={[24, 24]}>
                 <Col span={6}>
-                    <Card>123123</Card>
+                    <Card>1231234</Card>
                 </Col>
                 <Col span={12}>
                     <Card>123123</Card>
