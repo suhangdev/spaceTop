@@ -1,11 +1,10 @@
 import { NextPage } from 'next';
 import Header from '../header/header'
-
 import './layout.less'
 
 const Layout = (props: any) => {
     return (
-        <div>
+        <div className="global-box">
             <Header></Header>
             <div className="layout">
                 {props.children}

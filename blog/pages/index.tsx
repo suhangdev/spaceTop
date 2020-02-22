@@ -1,18 +1,28 @@
 import { NextPage } from 'next';
 import Link from 'next/link'
 import Layout from '../components/layout/layout'
-import {Button} from 'antd'
+import Card from '../components/card/card'
+import { Row, Col } from 'antd';
 
 import './index.less'
 
 const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
     <Layout>
         <div className="home">
-            {/* <h1 className="home">Hello world! - user agent: {userAgent}</h1> */}
-            <Button>我是按钮</Button>
-            <Link  href="/post/[id]" as={`post/${123}`}>
+            {/* <Link  href="/post/[id]" as={`post/${123}`}>
                 <a>post</a>
-            </Link>
+            </Link> */}
+            <Row gutter={[24, 24]}>
+                <Col span={6}>
+                    <Card>123123</Card>
+                </Col>
+                <Col span={12}>
+                    <Card>123123</Card>
+                </Col>
+                <Col span={6}>
+                    <Card>123123</Card>
+                </Col>
+            </Row>
         </div>
     </Layout>
 );
