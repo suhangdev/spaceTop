@@ -15,11 +15,18 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
             <Row gutter={[24, 24]}>
                 <Col xs={{span: 0}} md={{span: 8}} xl={{span: 6}}>
                     <Card>111111</Card>
+                    <Row>
+                        <Col xs={{span: 24}} xl={{span: 0}}>
+                            <Card>333333</Card>
+                        </Col>
+                    </Row>
                 </Col>
                 <Col xs={{span: 24}} md={{span: 16}} xl={{span: 12}}>
                     <Card>222222</Card>
+                    <Card>222222</Card>
+                    <Card>222222</Card>
                 </Col>
-                <Col xs={{span: 0}} md={{span: 8}} xl={{span: 6}}>
+                <Col xs={{span: 0}} xl={{span: 6}}>
                     <Card>333333</Card>
                 </Col>
             </Row>
