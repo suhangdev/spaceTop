@@ -13,13 +13,13 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => (
                 <a>post</a>
             </Link> */}
             <Row gutter={[24, 24]}>
-                <Col span={6}>
+                <Col xs={{span: 0}} md={{span: 8}} xl={{span: 6}}>
                     <Card>111111</Card>
                 </Col>
-                <Col span={12}>
+                <Col xs={{span: 24}} md={{span: 16}} xl={{span: 12}}>
                     <Card>222222</Card>
                 </Col>
-                <Col span={6}>
+                <Col xs={{span: 0}} md={{span: 8}} xl={{span: 6}}>
                     <Card>333333</Card>
                 </Col>
             </Row>

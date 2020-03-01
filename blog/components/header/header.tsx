@@ -2,7 +2,8 @@ import { NextComponentType } from 'next'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
-import { Row, Col, Avatar, Icon } from 'antd'
+import { GithubOutlined } from '@ant-design/icons';
+import { Row, Col, Avatar } from 'antd';
 
 import './header.less'
 
@@ -49,11 +50,11 @@ const Header: NextComponentType = () => {
                 <div className="header-container-right" onClick={() => {
                     window.location.href = '//github.com/suhangdev'
                 }}>
-                    <Icon style={{fontSize: '1.5rem'}} type="github" />
+                    <GithubOutlined style={{fontSize: '1.5rem'}} />
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Header
