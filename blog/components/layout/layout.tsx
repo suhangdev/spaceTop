@@ -5,7 +5,7 @@ import './layout.less'
 const Layout = (props: any) => {
     return (
         <div className="global-box">
-            <Header></Header>
+            <Header/>
             <div className="layout">
                 {props.children}
             </div>
