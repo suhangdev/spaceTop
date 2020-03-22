@@ -3,13 +3,15 @@ import Card from '../card/card'
 
 import './postItem.less'
 import Link from 'next/link'
+import { ListItem } from '../../type/types'
 
-const PostItem: React.FunctionComponent<{data: any}> = ({data}) => {
+const PostItem: React.FunctionComponent<{data: ListItem}> = ({data}) => {
+    console.log(data)
     return(
-        <Link href="/post/[id]" as={`post/${data}`}>
+        <Link href="/post/[id]" as={`post/${data.id}`}>
             <a>
                 <Card>
-                    {data}
+                    {data.title}
                 </Card>
             </a>
         </Link>

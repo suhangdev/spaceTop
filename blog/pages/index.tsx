@@ -7,17 +7,13 @@ import RecentCard from '../components/recentCard/recentCard'
 import ArchivesCard from '../components/archivesCard/archivesCard'
 import LinkCard from '../components/linkCard/linkCard'
 import { useState, useEffect } from 'react';
+import axios from 'axios'
+import { ListItem } from '../type/types';
 
 import './index.less'
 
-const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => {
-    const [postList, setPostList] = useState<any>([])
+const Home: NextPage<{list: ListItem[]}> = ({list: postList}) => {
     useEffect(() => {
-        setPostList([
-            'item1',
-            'item2',
-            'item3'
-        ])
     }, [])
     return (
         <Layout>
@@ -46,9 +42,14 @@ const Home: NextPage<{ userAgent: string }> = ({ userAgent }) => {
     )
 }
 
-Home.getInitialProps = async ({ req }) => {
-    const userAgent = req ? req.headers['user-agent'] || '' : navigator.userAgent;
-    return { userAgent };
+Home.getInitialProps = async (): Promise<{list: ListItem[]}> => {
+    return {
+        list: await new Promise((resolve) => {
+            axios('http://127.0.0.1:7001/getList').then((res: any) => {
+                resolve(res.data.data.list)
+            })
+        }),
+    }
 };
 
 export default Home;

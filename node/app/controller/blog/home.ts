@@ -1,14 +1,15 @@
 import { Controller } from 'egg';
 
 export default class HomeController extends Controller {
-  public async index() {
-    const { ctx } = this;
-    ctx.body = await ctx.service.blog.home.sayHi('egg');
-  }
-  public async getList() {
-    const { ctx } = this
-    const result = await this.app.mysql.select('articleList')
-    console.log(result)
-    ctx.body = result
-  }
+    public async getList() {
+        const { ctx } = this
+        ctx.status = 200
+        ctx.body = {
+            data: {
+                list: await ctx.service.blog.home.getArticleList()
+            },
+            status: 'success',
+            code: ctx.status
+        }
+    }
 }

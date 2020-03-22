@@ -2,6 +2,6 @@ import { Application } from "egg";
 
 module.exports = (app: Application) => {
     const { controller, router } = app;
-    router.get('/', controller.blog.home.index);
-    router.get('/list', controller.blog.home.getList);
+    router.get('/getList', controller.blog.home.getList);
+    router.get('/getPostDetail/:id', controller.blog.post.getPost);
 }

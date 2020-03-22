@@ -1,7 +1,7 @@
 import { Service } from 'egg'
 
 export default class Home extends Service {
-    public async sayHi(name: string) {
-        return `hi, ${name}`;
+    public async getArticleList() {
+        return await this.app.mysql.select('articleList')
     }
 }
