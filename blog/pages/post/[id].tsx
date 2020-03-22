@@ -8,26 +8,26 @@ import Card from '../../components/card/card'
 import Creative from '../../components/creative/creative'
 import RecentCard from '../../components/recentCard/recentCard'
 
+import axios from 'axios';
 import marked from 'marked'
 import hljs from 'highlight.js'
-import 'highlight.js/styles/atom-one-dark-reasonable.css'
+import 'highlight.js/styles/atom-one-light.css'
 
 import './post.less'
-import axios from 'axios';
 
 
 const Post: NextPage<{data: any}> = ({data}) => {
-    console.log(data)
     const router = useRouter()
     const markdown = data.content
     const renderer = new marked.Renderer()
     marked.setOptions({
         renderer,
         gfm: true,
+        breaks: true,
         pedantic: false,
         sanitize: false,
-        breaks: false,
         smartLists: true,
+        smartypants: false,
         highlight: (code) => {
             return hljs.highlightAuto(code).value
         }
@@ -38,8 +38,8 @@ const Post: NextPage<{data: any}> = ({data}) => {
             <Row gutter={[24, 24]}>
                 <Col xs={24} lg={16} xl={18}>
                     <Card>
-                        <div>文章{router.query.id}</div>
-                        <div dangerouslySetInnerHTML={{__html: html}}></div>   
+                        <h1 className="postTitle">{data.title}</h1>
+                        <div className='postContent' dangerouslySetInnerHTML={{__html: html}}></div>   
                     </Card>
                 </Col>
                 <Col xs={0} lg={8} xl={6}>
@@ -51,11 +51,12 @@ const Post: NextPage<{data: any}> = ({data}) => {
     )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async ({query}) => {
+    console.log(query)
     return {
         props: {
             data: await new Promise((resolve) => {
-                axios(`http://127.0.0.1:7001/getPostDetail/${1}`).then((res: any) => {
+                axios(`http://127.0.0.1:7001/getPostDetail/${query.id}`).then((res: any) => {
                     resolve(res.data.data)
                 })
             }),
