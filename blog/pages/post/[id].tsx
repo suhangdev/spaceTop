@@ -9,6 +9,8 @@ import Creative from '../../components/creative/creative'
 import RecentCard from '../../components/recentCard/recentCard'
 
 import marked from 'marked'
+import hljs from 'highlight.js'
+import 'highlight.js/styles/atom-one-dark-reasonable.css'
 
 import './post.less'
 
@@ -23,7 +25,7 @@ const Post: NextPage = () => {
     '***这是斜体加粗的文字***\n\n' +
     '~~这是加删除线的文字~~ \n\n'+
     '\`console.log(111)\` \n\n'+
-    '```javascript\n\n' +
+    '```typescript\n\n' +
     'var a=11; \n\n' +
     '```' 
     const renderer = new marked.Renderer()
@@ -35,19 +37,16 @@ const Post: NextPage = () => {
         breaks: false,
         smartLists: true,
         highlight: (code) => {
-            console.log(code)
-            return code
+            return hljs.highlightAuto(code).value
         }
     })
     const html = marked(markdown) 
-    console.log(html)
-    
     return (
         <Layout>
             <Row gutter={[24, 24]}>
                 <Col xs={24} lg={16} xl={18}>
                     <Card>
-                        <div>文章{router.query.id}</div> 
+                        <div>文章{router.query.id}</div>
                         <div dangerouslySetInnerHTML={{__html: html}}></div>   
                     </Card>
                 </Col>
