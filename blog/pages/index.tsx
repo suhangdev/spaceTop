@@ -46,6 +46,7 @@ Home.getInitialProps = async (): Promise<{list: ListItem[]}> => {
     return {
         list: await new Promise((resolve) => {
             axios('http://127.0.0.1:7001/getList').then((res: any) => {
+                console.log(res.data.data)
                 resolve(res.data.data.list)
             })
         }),
