@@ -5,11 +5,22 @@ import './postItem.less'
 import Link from 'next/link'
 import { ListItem } from '../../type/types'
 
+import { FieldTimeOutlined } from '@ant-design/icons'
+
+import utils, {Formater} from '../../utils/utils'
+
+const format: Formater = {
+    '60s': '刚刚',
+    '60m': '{nm}分钟前',
+    '1d': '今天 {hh}:{mm}',
+    'yesterday': '昨天 {hh}:{mm}',
+    '1y': '{MM}月{DD}日',
+    'xy': '{YYYY}年{MM}月{DD}日'
+}
+
 const PostItem: React.FunctionComponent<{data: ListItem}> = ({data}) => {
     console.log(data)
     const { ctime } = data
-    const date: Date = new Date(ctime)
-    console.log(date.getFullYear())
     return(
         <Link href="/post/[id]" as={`post/${data.id}`}>
             <a>
@@ -17,7 +28,7 @@ const PostItem: React.FunctionComponent<{data: ListItem}> = ({data}) => {
                     <h2>{data.title}</h2>
                     <div className="postItem-info">
                         <div>
-                            <span>{`${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`}</span>
+                            <span><FieldTimeOutlined /> {utils.getPublishTime(ctime, format)}</span>
                         </div>
                     </div>
                 </Card>

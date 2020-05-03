@@ -1,4 +1,4 @@
-interface Formater {
+export interface Formater {
     '60s'?: string // 一分钟内
     '60m'?: string // 一小时内
     '1d'?: string // 当日
