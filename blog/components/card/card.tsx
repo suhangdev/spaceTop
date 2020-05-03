@@ -1,10 +1,10 @@
-import { NextComponentType } from 'next'
+import React from 'react'
 import './card.less'
 
-const Card: NextComponentType = (props: any) => {
+const Card: React.FunctionComponent<{hover?: boolean}> = ({hover, children}) => {
     return (
-        <div className="card">
-            {props.children}
+        <div className={`card ${hover ? 'cardhover' : ''}`}>
+            {children}
         </div>
     )
 }

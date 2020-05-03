@@ -7,6 +7,7 @@
     &-avatar{
         width: 6rem;
         height: 6rem;
+        border-radius: 3rem;
     }
     &-name{
         font-size: 1.6rem;
@@ -25,21 +26,34 @@
         }
     }
     &-follow{
+        display: flex;
+        align-items: center;
+        justify-content: center;
         width: 100%;
-        margin-bottom: 1rem;
-        height: 2rem;
-        line-height: 2rem;
-        text-align: center;
-        border-radius: 1rem;
+        margin-bottom: 0.5rem;
+        height: 2.4rem;
+        border-radius: 1.2rem;
         color: @light;
-        background-color: @main;
-        border: 1px solid transparent;
+        font-size: 1.2rem;
         cursor: pointer;
-        transition: all .2s ease;
-        &:hover{
-            border: 1px solid @main;
-            background-color: @light;
-            color: @main;
+        border: 1px solid transparent;
+        background-color: @black;
+        color: @light;
+        transition: all .3s ease;
+        &-text{
+            line-height: 1;
+        }
+        &:hover, &:active{
+            border: 1px solid #fff;
+            background-color: @dark;
+            box-shadow: 
+                0 0 .1rem #fff,
+                inset 0 0 .1rem #fff,
+                0 0 1rem @pink,
+                inset 0 0 1rem @pink;
+            text-shadow:
+                -0.2rem -0.2rem 0.5rem @pink,
+                0.2rem 0.2rem 0.5rem @pink,
         }
     }
 }

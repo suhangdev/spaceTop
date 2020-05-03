@@ -34,7 +34,7 @@ const Header: NextComponentType = () => {
             <div className="header-container">
                 <div className="header-container-left">
                     <div className="header-container-left-avatar">
-                        <Avatar src="//suhangdev.su.bcebos.com/avatar.png"/>
+                        <Avatar size={48} src="//suhangdev.su.bcebos.com/avatar.png"/>
                     </div>
                     {
                         curPage.map(page => (
@@ -50,7 +50,7 @@ const Header: NextComponentType = () => {
                 <div className="header-container-right" onClick={() => {
                     window.location.href = '//github.com/suhangdev'
                 }}>
-                    <GithubOutlined style={{fontSize: '1.5rem'}} />
+                    <GithubOutlined style={{fontSize: '1.5rem', cursor: 'pointer'}} />
                 </div>
             </div>
         </div>

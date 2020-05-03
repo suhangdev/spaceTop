@@ -10,8 +10,8 @@ const PostItem: React.FunctionComponent<{data: ListItem}> = ({data}) => {
     return(
         <Link href="/post/[id]" as={`post/${data.id}`}>
             <a>
-                <Card>
-                    {data.title}
+                <Card hover={true}>
+                    <h2>{data.title}</h2>
                 </Card>
             </a>
         </Link>

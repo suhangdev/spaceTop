@@ -1,7 +1,24 @@
+@import '../../static/style/color.less';
+
 .card{
     padding: 1.5rem;
     margin-bottom: 1.5rem;
-    border-radius: 0.3rem;
-    box-shadow: 0 0.4rem 0.8rem rgba(0,0,0,0.05), 0 0 0.1rem rgba(0,0,0,0.1);
-    background-color: #fff;
+    border-radius: .6rem;
+    background-color: @deepblue;
+    border: 1px solid @deepblue;
+    transition: all .3s ease;
+}
+
+.cardhover{
+    &:hover, &:active {
+        border: 1px solid #fff;
+        box-shadow: 
+                0 0 .1rem #fff,
+                inset 0 0 .1rem #fff,
+                0 0 1rem @blue,
+                inset 0 0 1rem @blue;
+        // text-shadow:
+        //     -0.2rem -0.2rem 0.5rem @pink,
+        //     0.2rem 0.2rem 0.5rem @pink,
+    }
 }

@@ -11,7 +11,7 @@ const Creative: React.FunctionComponent = () => {
     return (
         <Card>
             <div className="creative">
-                <img className="creative-avatar" src="//suhangdev.su.bcebos.com/avatar.png"/>
+                {/* <img className="creative-avatar" src="//suhangdev.su.bcebos.com/avatar.png"/> */}
                 <div className="creative-name">suhangdev</div>
                 <div className="creative-profession">Web Developer</div>
                 <div className="creative-location">
@@ -19,7 +19,7 @@ const Creative: React.FunctionComponent = () => {
                     <span>中国 浙江 杭州</span>
                 </div>
                 <div className="creative-follow" onClick={handleFollowClick}>
-                    <span>Follow</span>
+                    <span className="creative-follow-text">Follow</span>
                 </div>
             </div>
         </Card>
