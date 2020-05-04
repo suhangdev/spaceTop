@@ -1,10 +1,15 @@
+@import '../../static/style/color.less';
+
 .postContent{
     font-size: 1rem;
+    a{
+        color: @pink;
+    }
     h2{
         padding-bottom: 0.8rem;
         font-size: 1.4rem;
-        border-bottom: 1px solid #ececec;
-        color: #333;
+        border-bottom: 1px solid @light;
+        color: @light;
         line-height: 1.5;
         margin-top: 2rem;
         margin-bottom: 1rem;
@@ -14,7 +19,7 @@
     p{
         line-height: 1.8;
         margin: 1.4rem 0;
-        color: #333;
+        color: @light;
         font-size: 1rem;
     }
     
@@ -22,13 +27,13 @@
         position: relative;
         line-height: 1.75;
         font-family: Menlo,Monaco,Consolas,Courier New,monospace;
-        background: #f8f8f8;
+        background: @black;
         padding: 1rem 1.5rem;
         border-radius: 0.3rem;
         margin: 1rem 0;
         code{
             overflow-x: auto;
-            color: #333;
+            color: @light;
         }
     }
     
@@ -38,10 +43,10 @@
         width: auto;
         max-width: 100%;
         overflow: auto;
-        border: .1rem solid #f6f6f6;
+        border: 1px solid @black;
         thead{
-            background: #f6f6f6;
-            color: #000;
+            background: @black;
+            color: @light;
             text-align: left;
         }
         tbody{
@@ -52,6 +57,7 @@
         th{
             padding: .6rem;
             line-height: 2rem;
+            background-color: @black;
         }
         td{
             padding: .6rem;
@@ -59,7 +65,10 @@
             min-width: 5rem;
         }
         tr:nth-child(2n) {
-            background-color: #fcfcfc;
+            background-color: @black;
+        }
+        tr{
+            background-color: @dark;
         }
     }
     
@@ -73,17 +82,63 @@
     }
     
     blockquote {
-        color: #666;
+        color: @light;
         padding: 1px 1.2rem;
         margin: 1.6rem 0;
-        border-left: 0.4rem solid #cbcbcb;
-        background-color: #f8f8f8;
+        border-left: 0.4rem solid @orange;
+        background-color: @black;
     }
 }
 
 .postTitle{
     margin: .67em 0;
-    font-size: 2rem;
     font-weight: 700;
     line-height: 1.5;
+    color: @light;
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .postTitle{
+        font-size: 1.2rem;
+    }
+    .postContent{
+        h2{
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+        p{
+            color: @light;
+            font-size: 0.8rem;
+        }
+        table{
+            font-size: 0.8rem;
+            th{
+                padding: .4rem;
+                line-height: 1rem;
+            }
+            td{
+                padding: .4rem;
+                line-height: 1rem;
+                min-width: 2rem;
+            }
+        }
+        pre{
+            line-height: 1.75;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.6rem;
+            margin: 0.5rem 0;
+            code{
+                font-size: 0.7rem;
+            }
+        }
+        ol{
+            margin: 0.5rem 0;
+            padding-left: 0.75rem;
+            li{
+                margin: 0.5rem 0;
+                font-size: 0.7rem;
+            }
+        }
+    }
 }

@@ -48,7 +48,7 @@ const Header: NextComponentType = () => {
                     }
                 </div>
                 <div className="header-container-right" onClick={() => {
-                    window.location.href = '//github.com/suhangdev'
+                    window.open('//github.com/suhangdev')
                 }}>
                     <GithubOutlined style={{fontSize: '1.5rem', cursor: 'pointer'}} />
                 </div>

@@ -20,16 +20,17 @@ const format: Formater = {
 
 const PostItem: React.FunctionComponent<{data: ListItem}> = ({data}) => {
     console.log(data)
-    const { ctime } = data
+    const { ctime, title, abstract } = data
     return(
         <Link href="/post/[id]" as={`post/${data.id}`}>
             <a>
                 <Card hover={true}>
-                    <h2>{data.title}</h2>
+                    <h2>{title}</h2>
                     <div className="postItem-info">
-                        <div>
-                            <span><FieldTimeOutlined /> {utils.getPublishTime(ctime, format)}</span>
-                        </div>
+                        <span><FieldTimeOutlined /> {utils.getPublishTime(ctime, format)}</span>
+                    </div>
+                    <div className="postItem-abstract">
+                        <p>{abstract}</p>
                     </div>
                 </Card>
             </a>

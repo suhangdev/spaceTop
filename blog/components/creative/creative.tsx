@@ -16,7 +16,7 @@ const Creative: React.FunctionComponent = () => {
                 <div className="creative-profession">Web Developer</div>
                 <div className="creative-location">
                     <EnvironmentOutlined className="creative-location-icon" />
-                    <span>中国 浙江 杭州</span>
+                    <span>Hangzhou, Zhejiang</span>
                 </div>
                 <div className="creative-follow" onClick={handleFollowClick}>
                     <span className="creative-follow-text">Follow</span>
