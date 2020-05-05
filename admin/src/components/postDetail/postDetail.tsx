@@ -30,6 +30,7 @@ const PostDetail = (props: any) => {
     })
     const { match: {params: {id}} } = props
     const [title, setTitle] = useState<string>('')
+    const [abstract, setAbstract] = useState<string>('')
     const [content, setContent] = useState<string>('')
     const [pre, setPre] = useState<string>('')
     useEffect(() => {
@@ -45,14 +46,44 @@ const PostDetail = (props: any) => {
         setContent(e.target.value)
         setPre(marked(e.target.value))
     }
+    const handleSave = () => {
+        const data = {
+            id,
+            title,
+            content,
+            abstract,
+        }
+        axios({
+            method: 'post',
+            url: `http://127.0.0.1:7001/updatePost`,
+            data,
+        }).then((res: any) => {
+            console.log(res)
+        })
+    }
     return (
         <div className="postDetail">
             <div className="postDetail-header">
-                <input type="text" value={title} className="postDetail-header-title" placeholder="请输入标题"/>
+                <input 
+                    type="text" 
+                    value={title} 
+                    onChange={(e) => setTitle(e.target.value)} 
+                    className="postDetail-header-title" 
+                    placeholder="请输入标题"
+                />
                 <div className="postDetail-header-opt">
-                    <div className="postDetail-header-opt-save">暂存</div>
+                    <div className="postDetail-header-opt-save" onClick={handleSave}>暂存</div>
                     <div className="postDetail-header-opt-release">发布</div>
                 </div>
+            </div>
+            <div>
+                <input 
+                    type="text" 
+                    value={abstract} 
+                    onChange={(e) => setAbstract(e.target.value)} 
+                    className="postDetail-header-abstract" 
+                    placeholder="请输入摘要"
+                />
             </div>
             <div className="postDetail-editor">
                 <textarea className="postDetail-editor-input" value={content || ''} onChange={handleChange} />

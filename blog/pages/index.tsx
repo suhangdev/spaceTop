@@ -29,13 +29,20 @@ const Home: NextPage<{list: ListItem[]}> = ({list: postList}) => {
                             </Col>
                         </Row>
                     </Col>
-                    <Col xs={{span: 24}} md={{span: 16}} xl={{span: 12}}>
+                    <Col xs={{span: 24}} md={{span: 16}} xl={{span: 18}}>
+                        <PostList list={postList}/>
+                    </Col>
+                    <Col xs={{span: 0}} xl={{span: 0}}>
+                        <ArchivesCard/>
+                        <RecentCard/>
+                    </Col>
+                    {/* <Col xs={{span: 24}} md={{span: 16}} xl={{span: 12}}>
                         <PostList list={postList}/>
                     </Col>
                     <Col xs={{span: 0}} xl={{span: 6}}>
                         <ArchivesCard/>
                         <RecentCard/>
-                    </Col>
+                    </Col> */}
                 </Row>
             </div>
         </Layout>
@@ -46,7 +53,6 @@ Home.getInitialProps = async (): Promise<{list: ListItem[]}> => {
     return {
         list: await new Promise((resolve) => {
             axios('http://127.0.0.1:7001/getList').then((res: any) => {
-                console.log(res.data.data)
                 resolve(res.data.data.list)
             })
         }),

@@ -19,7 +19,6 @@ const format: Formater = {
 }
 
 const PostItem: React.FunctionComponent<{data: ListItem}> = ({data}) => {
-    console.log(data)
     const { ctime, title, abstract } = data
     return(
         <Link href="/post/[id]" as={`post/${data.id}`}>

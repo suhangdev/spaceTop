@@ -41,7 +41,7 @@ const Post: NextPage<{data: any}> = ({data}) => {
                 </Col>
                 <Col xs={0} lg={8} xl={6}>
                     <Creative/>
-                    <RecentCard/>
+                    {/* <RecentCard/> */}
                 </Col>
             </Row>
         </Layout>
@@ -49,7 +49,6 @@ const Post: NextPage<{data: any}> = ({data}) => {
 }
 
 export const getServerSideProps: GetServerSideProps = async ({query}) => {
-    console.log(query)
     return {
         props: {
             data: await new Promise((resolve) => {

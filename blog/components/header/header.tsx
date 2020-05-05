@@ -15,7 +15,7 @@ const Header: NextComponentType = () => {
     }
     const [curPage, setCurPage] = useState<page[]>([
         { path: '/', name: 'home', active: false },
-        { path: '/archives', name: 'archives', active:false }
+        // { path: '/archives', name: 'archives', active:false }
     ]) 
     const router = useRouter()
     useEffect(() => {
