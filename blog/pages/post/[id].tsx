@@ -1,8 +1,6 @@
 import React from 'react'
 import { NextPage, GetServerSideProps } from 'next';
-import { useRouter } from 'next/router'
 import { Row, Col } from 'antd';
-import Link from 'next/link';
 import Layout from '../../components/layout/layout'
 import Card from '../../components/card/card'
 import Creative from '../../components/creative/creative'
@@ -17,7 +15,6 @@ import './post.less'
 
 
 const Post: NextPage<{data: any}> = ({data}) => {
-    const router = useRouter()
     const markdown = data.content
     const renderer = new marked.Renderer()
     marked.setOptions({

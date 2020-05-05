@@ -13,9 +13,11 @@ export interface Formater {
 class Utils {
     public formatTime(timeStamp: number, type: string): string {
         if (this.getType(timeStamp) !== 'Number') {
+            // eslint-disable-next-line
             throw `Error: 时间戳格式错误。传入的时间戳：${timeStamp}`
         }
         if (String(timeStamp).length !== 10 && String(timeStamp).length !== 13) {
+            // eslint-disable-next-line
             throw `Error: 请传入10位或13位时间戳。传入的时间戳：${timeStamp}`
         }
         let time: any = 0
