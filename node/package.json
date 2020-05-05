@@ -12,6 +12,7 @@
     "stop": "egg-scripts stop --title=egg-server-app",
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
+    "tsc": "ets && tsc -p tsconfig.json",
     "test-local": "egg-bin test",
     "test": "npm run lint -- --fix && npm run test-local",
     "cov": "egg-bin cov",
