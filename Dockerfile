@@ -8,7 +8,7 @@ WORKDIR /usr/local/app/node
 
 COPY ./node/package*.json ./
 
-RUN npm install --production --registry=https://registry.npm.taobao.org
+RUN npm install --production
 
 COPY ./node/ ./
 
@@ -20,7 +20,7 @@ WORKDIR /usr/local/app/next
 
 COPY ./next/package*.json ./
 
-RUN npm install --registry=https://registry.npm.taobao.org
+RUN npm install
 
 COPY ./next/ ./
 
