@@ -24,6 +24,16 @@ RUN npm install
 
 COPY ./next/ ./
 
+WORKDIR /usr/local/app/admin
+
+COPY ./admin/package*.json ./
+
+RUN npm install
+
+COPY ./admin/ ./
+
+RUN npm run build
+
 FROM keymetrics/pm2:latest-alpine
 
 COPY --from=node /usr/local/app/ /usr/local/app/
