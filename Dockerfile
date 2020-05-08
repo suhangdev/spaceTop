@@ -1,4 +1,4 @@
-FROM node:latest-alpine
+FROM node:latest
 
 RUN mkdir -p /usr/local/app/node
 
