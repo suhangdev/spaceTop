@@ -24,6 +24,8 @@ RUN npm install
 
 COPY ./next/ ./
 
+RUN npm run build
+
 WORKDIR /usr/local/app/admin
 
 COPY ./admin/package*.json ./
