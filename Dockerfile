@@ -34,9 +34,11 @@ COPY ./admin/ ./
 
 RUN npm run build
 
-FROM keymetrics/pm2:latest-alpine
+FROM keymetrics/pm2:latest-alpine as pm2
 
 COPY --from=node /usr/local/app/ /usr/local/app/
+
+WORKDIR /usr/local/app/next
 
 EXPOSE 3000
 
