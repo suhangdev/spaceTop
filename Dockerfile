@@ -1,6 +1,8 @@
-FROM node:latest
+FROM node:latest as node
 
 RUN mkdir -p /usr/local/app/node
+
+RUN mkdir -p /usr/local/app/next
 
 WORKDIR /usr/local/app/node
 
@@ -10,13 +12,9 @@ RUN npm install --production --registry=https://registry.npm.taobao.org
 
 COPY ./node/ ./
 
-EXPOSE  7001
+EXPOSE 7001
 
 RUN npm start
-
-FROM keymetrics/pm2:latest-alpine
-
-RUN mkdir -p /usr/local/app/next
 
 WORKDIR /usr/local/app/next
 
@@ -25,6 +23,10 @@ COPY ./next/package*.json ./
 RUN npm install --registry=https://registry.npm.taobao.org
 
 COPY ./next/ ./
+
+FROM keymetrics/pm2:latest-alpine
+
+COPY --from=node /usr/local/app/ /usr/local/app/
 
 EXPOSE 3000
 
