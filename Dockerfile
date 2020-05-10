@@ -1,5 +1,7 @@
 FROM node:latest as node
 
+RUN npm config set registry https://registry.npm.taobao.org
+
 RUN mkdir -p /usr/local/app/node
 
 RUN mkdir -p /usr/local/app/next
@@ -26,24 +28,20 @@ EXPOSE 7001
 
 RUN npm start
 
-WORKDIR /usr/local/app/next
-
-COPY ./next/ ./
-
-RUN npm run build
-
 WORKDIR /usr/local/app/admin
 
 COPY ./admin/ ./
 
 RUN npm run build
 
-FROM keymetrics/pm2:latest-alpine as pm2
-
-COPY --from=node /usr/local/app/ /usr/local/app/
-
 WORKDIR /usr/local/app/next
+
+COPY ./next/ ./
+
+RUN npm run build
 
 EXPOSE 3000
 
-CMD [ "pm2-runtime", "start", "npm", "--run", "start" ]
+RUN npm install --global pm2
+
+CMD [ "pm2-runtime", "start", "npm", "--", "start" ]
