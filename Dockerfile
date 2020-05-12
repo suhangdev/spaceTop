@@ -1,4 +1,4 @@
-FROM node:latest as node
+FROM node:12.13.0-alpine as node
 
 RUN npm config set registry https://registry.npm.taobao.org
 
