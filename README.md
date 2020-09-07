@@ -1,3 +1,15 @@
-# spaceTop
+# umi project
 
-个人网站
+## Getting Started
+
+Install dependencies,
+
+```bash
+$ yarn
+```
+
+Start the dev server,
+
+```bash
+$ yarn start
+```
