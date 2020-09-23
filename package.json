@@ -1,5 +1,5 @@
 {
-  "name": "spaceTop",
+  "name": "space-top",
   "version": "1.0.0",
   "description": "",
   "private": true,
@@ -22,9 +22,19 @@
     "clean": "ets clean"
   },
   "dependencies": {
+    "@ant-design/pro-layout": "^6.4.19",
+    "@umijs/preset-react": "^1.6.7",
+    "@umijs/test": "^3.2.22",
     "egg": "^2.6.1",
     "egg-scripts": "^2.6.0",
-    "egg-view-assets": "^1.6.1"
+    "egg-view-assets": "^1.6.1",
+    "egg-view-nunjucks": "^2.2.0",
+    "lint-staged": "^10.4.0",
+    "prettier": "^2.1.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "umi": "^3.2.22",
+    "yorkie": "^2.0.0"
   },
   "devDependencies": {
     "@types/mocha": "^2.2.40",
@@ -53,6 +63,6 @@
   "eslintIgnore": [
     "coverage"
   ],
-  "author": "",
+  "author": "suhangdev",
   "license": "MIT"
 }

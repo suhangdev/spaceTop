@@ -18,3 +18,7 @@ config/**/*.js
 app/**/*.map
 test/**/*.map
 config/**/*.map
+
+.umi*
+app/public
+config/manifest.json
