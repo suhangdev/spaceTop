@@ -20,6 +20,17 @@ export default (appInfo: EggAppInfo) => {
     sourceUrl: `https://github.com/eggjs/examples/tree/master/${appInfo.name}`,
   };
 
+  config.mysql = {
+    client: {
+      host: '182.61.146.67',
+      port: '3306',
+      user: 'root',
+      password: 'suhangdev',
+      database: 'blog',
+    },
+    app: true,
+  }
+
   // the return config will combines to EggAppConfig
   return {
     ...config,
