@@ -17,7 +17,7 @@ export default (appInfo: EggAppInfo) => {
     domainWhiteList: ['*']
   };
   config.cors = {
-      origin: '*',
+      origin: 'http://127.0.0.1:8000',
       credentials: true,   // 开启认证
       allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
   };
