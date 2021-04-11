@@ -1,0 +1,149 @@
+@import '../../assets/color.less';
+
+.postContent{
+    font-size: 1rem;
+    a{
+        color: @pink;
+    }
+    h2{
+        padding-bottom: 0.8rem;
+        font-size: 1.4rem;
+        border-bottom: 1px solid @light;
+        color: @light;
+        line-height: 1.5;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-weight: 600;
+    }
+    
+    p{
+        line-height: 1.8;
+        margin: 1.4rem 0;
+        color: @light;
+        font-size: 1rem;
+    }
+    
+    pre{
+        position: relative;
+        line-height: 1.75;
+        font-family: Menlo,Monaco,Consolas,Courier New,monospace;
+        background: @black;
+        padding: 1rem 1.5rem;
+        border-radius: 0.3rem;
+        margin: 1rem 0;
+        code{
+            overflow-x: auto;
+            color: @light;
+        }
+    }
+    
+    table{
+        display: inline-block!important;
+        font-size: 1rem;
+        width: auto;
+        max-width: 100%;
+        overflow: auto;
+        border: 1px solid @black;
+        thead{
+            background: @black;
+            color: @light;
+            text-align: left;
+        }
+        tbody{
+            display: table-row-group;
+            vertical-align: middle;
+            border-color: inherit;
+        }
+        th{
+            padding: .6rem;
+            line-height: 2rem;
+            background-color: @black;
+        }
+        td{
+            padding: .6rem;
+            line-height: 2rem;
+            min-width: 5rem;
+        }
+        tr:nth-child(2n) {
+            background-color: @black;
+        }
+        tr{
+            background-color: @dark;
+        }
+    }
+    
+    ol{
+        margin: 1rem 0;
+        padding-left: 1.5rem;
+        li{
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+    }
+    
+    blockquote {
+        color: @light;
+        padding: 1px 1.2rem;
+        margin: 1.6rem 0;
+        border-left: 0.4rem solid @orange;
+        background-color: @black;
+    }
+    img{
+        display: block;
+        margin: 2rem auto;
+        max-width: 100%;
+    }
+}
+
+.postTitle{
+    margin: .67em 0;
+    font-weight: 700;
+    line-height: 1.5;
+    color: @light;
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 768px) {
+    .postTitle{
+        font-size: 1.2rem;
+    }
+    .postContent{
+        h2{
+            font-size: 1rem;
+            margin-top: 1rem;
+        }
+        p{
+            color: @light;
+            font-size: 0.8rem;
+        }
+        table{
+            font-size: 0.8rem;
+            th{
+                padding: .4rem;
+                line-height: 1rem;
+            }
+            td{
+                padding: .4rem;
+                line-height: 1rem;
+                min-width: 2rem;
+            }
+        }
+        pre{
+            line-height: 1.75;
+            padding: 0.5rem 0.75rem;
+            border-radius: 0.6rem;
+            margin: 0.5rem 0;
+            code{
+                font-size: 0.7rem;
+            }
+        }
+        ol{
+            margin: 0.5rem 0;
+            padding-left: 0.75rem;
+            li{
+                margin: 0.5rem 0;
+                font-size: 0.7rem;
+            }
+        }
+    }
+}

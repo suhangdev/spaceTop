@@ -10,10 +10,17 @@ export default (appInfo: EggAppInfo) => {
   // add your egg config in here
   config.middleware = [];
 
+  config.security = {
+    csrf: { 
+        enable: false
+    },
+    domainWhiteList: ['*']
+  };
   config.cors = {
-    origin: 'http://localhost:8000',
-    allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH',
-  }
+      origin: '*',
+      credentials: true,   // 开启认证
+      allowMethods: 'GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS'
+  };
 
   // add your special config in here
   const bizConfig = {

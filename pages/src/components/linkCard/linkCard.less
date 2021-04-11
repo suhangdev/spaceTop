@@ -1,0 +1,26 @@
+@import '../../assets/color.less';
+
+.link{
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    &-item{
+        display: flex;
+        justify-content: space-between;
+        padding: .5rem;
+        margin: .5rem 0;
+        margin-left: -.5rem;
+        margin-right: -.5rem;
+        border-radius: 0.6rem;
+        border: 1px solid transparent;
+        transition: all .3s ease;
+        &:hover, &:active{
+            background-color: @black;
+            border: 1px solid @light;
+            box-shadow: 
+                0 0 .1rem @light,
+                inset 0 0 .1rem @light,
+                0 0 1rem @orange,
+                inset 0 0 1rem @orange;
+        }
+    }
+}

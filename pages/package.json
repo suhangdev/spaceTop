@@ -21,13 +21,17 @@
   },
   "dependencies": {
     "@ant-design/pro-layout": "^5.0.12",
-    "@umijs/preset-react": "1.x",
-    "@umijs/test": "^3.2.22",
-    "lint-staged": "^10.0.7",
+    "@types/marked": "^2.0.1",
+    "@umijs/preset-react": "^1.8.4",
+    "@umijs/test": "^3.4.8",
+    "ahooks": "^2.10.0",
+    "highlight.js": "^10.7.2",
+    "lint-staged": "^10.5.4",
+    "marked": "^2.0.2",
     "prettier": "^1.19.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "umi": "^3.2.22",
+    "umi": "^3.4.8",
     "yorkie": "^2.0.0"
   }
 }

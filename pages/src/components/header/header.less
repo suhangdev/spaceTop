@@ -1,0 +1,77 @@
+@import '../../assets/color.less';
+
+.header{
+    flex-shrink: 0;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 1.5rem 0;
+    background-color: @dark;
+    box-shadow: 0 0.4rem 0.8rem @dark;
+    font-size: 0.9rem;
+    z-index: 99999;
+    &-container{
+        margin: 0 auto;
+        width: 100%;
+        height: 3rem;
+        padding: 1.5rem 5%;
+        display: flex;
+        justify-content: space-between;
+        &-left{
+            display: flex;
+            width: 30%;
+            align-items: center;
+            &-avatar{
+                padding-right: 0.75rem;
+            }
+            &-link{
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0 0.75rem;
+                transition: all ease 300ms;
+                font-size: 1.4rem;
+                color: @light;
+                &:hover{
+                    color: @light;
+                    text-shadow:
+                    -0.01rem -0.01rem 0.25rem @light,
+                    0.01rem 0.01rem 0.25rem @light,
+                    0 0 0.25rem @deepblue,
+                }
+                &-active{
+                    color: @light;
+                    text-shadow:
+                    -0.01rem -0.01rem 0.25rem @light,
+                    0.01rem 0.01rem 0.25rem @light,
+                    0 0 0.25rem @deepblue,
+                }
+            }
+        }
+        &-right{
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+        }
+    }
+}
+
+
+@media screen and (min-width: 1280px){
+    .header{
+        &-container{
+            width: 1200px;
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .header{
+        margin-bottom: 1rem;
+    }
+}

@@ -5,7 +5,8 @@ export default defineConfig({
     type: 'none',
   },
   routes: [
-    { path: '/', component: '@/pages/index' },
+    { path: '/', component: '@/pages/index', name: 'Home' },
+    { path: 'post/:id', component: '@/pages/Detail/Detail', name: '' },
   ],
   dva: {
     immer: false,
